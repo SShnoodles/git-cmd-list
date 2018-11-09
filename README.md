@@ -30,7 +30,7 @@ git commit -m "初次提交"  // 注释
 ### 推送远端
 
 ```js
-git push // 默认推送当前分支
+git push origin <branch name>
 ```
 
 ### 拉取更新
