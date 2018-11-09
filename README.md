@@ -3,6 +3,8 @@
 
 只列命令作用，不涉及太多概念和流程讲述。
 
+[TOC]
+
 
 
 ## 常用命令
@@ -82,7 +84,7 @@ git branch -D <branch name>
 
 ### 合并分支
 
-#### merge 
+#### merge
 
 ```js
 // 如当前分支为master，把dev分支合并到master。
@@ -94,7 +96,7 @@ git merge --no-ff -m "提交注释" dev
 
 ```
 
-### rebase（变基、衍合）
+#### rebase（变基、衍合）
 
 ```js
 // dev打补丁到master
@@ -169,7 +171,7 @@ git stash list
 
 
 
-### 打标记
+## 打标记
 
 ```js
 git tag v0.1.0
@@ -204,7 +206,7 @@ git log -p -- README.md
 
 
 
-### 参考文献
+## 参考文献
 
 一些概念或者流程不明白的可以参考这两个。
 
