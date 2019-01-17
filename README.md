@@ -3,7 +3,7 @@
 
 只列命令作用，不涉及太多概念和流程讲述。
 
-[TOC]
+
 
 
 
@@ -56,31 +56,20 @@ git push -u origin master
 
 ## 分支
 
-###  创建分支
-
 ```js
+// 创建分支
 git checkout -b <new branch> // -b 创建并且直接切换到新分支
-```
-
-### 查看分支
-
-```js
+// 查看分支
 git branch
-```
-
-### 切换分支
-
-```js
+// 切换分支
 git checkout <branch name>
-```
-
-### 删除分支
-
-```js
+// 删除分支
 git branch -d <branch name>
 // 强删
 git branch -D <branch name>
 ```
+
+
 
 ### 合并分支
 
@@ -104,6 +93,13 @@ git rebase master server
 
 // 如当前分支为dev，把在dev里提交的改变移到master里重演一遍。
 git rebase master
+
+// 出现冲突(conflict)，再解决完冲突后，add => continue 继续rebase
+git add <file>
+git rebase --continue
+
+// 终止rebase
+git rebase --abort
 ```
 
 
@@ -113,6 +109,8 @@ git rebase master
 `HEAD`表示当前版本
 
 上一个版本就是`HEAD^`
+
+ [操作错误情况处理(建议看此篇)](https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md)
 
 ### 暂存回退
 
@@ -139,42 +137,29 @@ git revert <commit id>
 
 ## 临时储藏
 
-### 存
-
-```git
+```js
+// 存 
 git stash
-```
-
-### 取
-
-```js
+// 取
 git stash apply <指定编号>
-```
-
-### 删
-
-```js
+// 删
 git stash drop <指定编号> 
-```
-
-### 取+删
-
-```js
+// 取+删
 git stash pop <指定编号> 
-```
-
-### 查看列表
-
-```js
-git stash list
+// git stash list
 ```
 
 
 
-## 打标记
+## 标记
 
 ```js
-git tag v0.1.0
+// 打标记
+git tag <tag name>
+// 切换到标记，类似只读模式
+git checkout <tag name>
+// 已此标记切出一个新分支
+git checkout -b <branch name> <tag name>
 ```
 
 
